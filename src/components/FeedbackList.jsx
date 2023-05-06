@@ -1,4 +1,5 @@
 import React from "react";
+import propTypes from "prop-types";
 import FeedbackItem from "./FeedbackItem";
 
 function FeedbackList({ feedback, handleDelete }) {
@@ -18,5 +19,10 @@ function FeedbackList({ feedback, handleDelete }) {
     </div>
   );
 }
+
+FeedbackList.propTypes = {
+  feedback: propTypes.array.isRequired,
+  handleDelete: propTypes.func.isRequired,
+};
 
 export default FeedbackList;
