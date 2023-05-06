@@ -1,13 +1,23 @@
-import React from 'react'
+import React from "react";
 
 function Header() {
+  const headerStyles = {
+    background: "#333",
+    color: "pink",
+    textAlign: "center",
+    padding: "10px",
+    margin: "auto",
+  };
+
   return (
-    <div>
-      <div className="container">
-        <h2>Feedback UI</h2>
+    <header className="header" style={headerStyles}>
+      <div>
+        <div className="container">
+          <h2>Feedback UI</h2>
+        </div>
       </div>
-    </div>
-  )
+    </header>
+  );
 }
 
-export default Header
+export default Header;
