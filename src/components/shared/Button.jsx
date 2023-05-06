@@ -1,11 +1,10 @@
-import React from "react";
-import propTypes from "prop-types";
+import PropTypes from "prop-types";
 
 function Button({ children, version, type, isDisabled }) {
   return (
-    <div type={type} disabled={isDisabled} className={`btn-${version}`}>
+    <button type={type} disabled={isDisabled} className={`btn btn-${version}`}>
       {children}
-    </div>
+    </button>
   );
 }
 
@@ -16,10 +15,10 @@ Button.defaultProps = {
 };
 
 Button.propTypes = {
-  children: propTypes.node.isRequired,
-  version: propTypes.string,
-  type: propTypes.string,
-  isDisabled: propTypes.bool,
+  children: PropTypes.node.isRequired,
+  version: PropTypes.string,
+  type: PropTypes.string,
+  isDisabled: PropTypes.bool,
 };
 
 export default Button;
