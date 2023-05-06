@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { v4 as uuidv4 } from "uuid";
+import React, { useState } from "react";
 import Header from "./components/Header";
 import FeedbackList from "./components/FeedbackList";
 import FeedbackData from "./data/FeedbackData";
@@ -9,13 +10,18 @@ function App() {
   const [feedback, setFeedback] = useState(FeedbackData);
 
   const addFeedback = (newFeedback) => {
-    console.log(newFeedback);
+    newFeedback.id = uuidv4();
+    setFeedback([...feedback, newFeedback]);
   };
 
   const deleteFeedback = (id) => {
     const newFeedback = feedback.filter((feedback) => feedback.id !== id);
     setFeedback(newFeedback);
   };
+
+  if (typeof window !== "undefined") {
+    window.React = React;
+  }
 
   return (
     <>
